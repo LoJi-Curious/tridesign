@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quan niệm thiết kế của tôi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;900&family=JetBrains+Mono:wght@700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<noscript><style>#intro{display:none}</style></noscript>
+</head>
+<body class="lock">
+<div class="grain" aria-hidden="true"></div>
+
+<!-- A. MỞ ĐẦU -->
+<section id="intro" aria-label="Mở đầu">
+  <i class="iw a"></i><i class="iw b"></i><i class="iw c"></i>
+  <div class="in-box">
+    <div class="in-meta"><span>ĐANG KHỞI ĐỘNG</span><span id="inPct">000%</span></div>
+    <h1 class="in-title"><span><i>QUAN NIỆM</i></span><span><i>THIẾT KẾ</i></span><span><i>CỦA TÔI</i></span></h1>
+    <p class="in-quote">MỌI Ý TƯỞNG ĐỀU BẮT ĐẦU TỪ ĐÂU ĐÓ.</p>
+    <div class="in-bar"><b></b></div>
+    <button id="skip" class="pill" type="button">Bỏ qua</button>
+  </div>
+</section>
+
+<!-- B. GIAO DIỆN CHÍNH: VÒNG TRÒN CHỦ ĐỀ -->
+<main id="main">
+  <header class="hud">
+    <button id="logo" class="logo" type="button" aria-label="TRÍ">TRÍ<sup>®</sup></button>
+    <span class="hud-mid">QUAN NIỆM THIẾT KẾ CỦA TÔI</span>
+    <div class="hud-r"><span id="coord">X000 Y000</span>
+      <button id="replay" class="round" type="button" aria-label="Phát lại phần mở đầu" title="Phát lại"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></button></div>
+  </header>
+
+  <div class="stage" id="stage">
+    <div class="bg-word" aria-hidden="true">CÂU CHUYỆN</div>
+    <div class="side sl"><b id="idx">00</b><span>/ 09</span><small id="status">CHỜ LỆNH</small></div>
+    <div class="side sr"><p><kbd>←</kbd><kbd>→</kbd> chuyển chương</p><p><kbd>Esc</kbd> quay lại</p><p><kbd>1–9</kbd> nhảy chương</p><p><kbd>M</kbd> thu / mở vòng</p></div>
+
+    <div class="ring" id="ring">
+      <div class="track" aria-hidden="true"></div><div class="track t2" aria-hidden="true"></div>
+      <div class="disc" aria-hidden="true"></div>
+      <button id="char" class="char" type="button" aria-expanded="false" aria-controls="nodes" aria-label="Nhân vật — bấm để thu hoặc mở vòng chủ đề">
+        <img id="charImg" alt="" width="300" height="272">
+        <svg class="fb" viewBox="0 0 200 240" aria-hidden="true"><path d="M60 40h80l10 190H50z" fill="#111"/><circle cx="100" cy="90" r="36" fill="#fff" stroke="#111" stroke-width="6"/><rect x="72" y="86" width="20" height="14" rx="7" fill="#111"/><rect x="108" y="86" width="20" height="14" rx="7" fill="#111"/></svg>
+      </button>
+      <div class="nodes" id="nodes" role="group" aria-label="Chín chủ đề"></div>
+    </div>
+  </div>
+
+  <div class="capbar">
+    <button id="toggle" class="round" type="button" aria-label="Thu hoặc mở vòng chủ đề" title="Thu / mở vòng"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9" stroke-dasharray="3 3"/></svg></button>
+    <b class="n" id="capNum">00</b><span class="cap-t" id="capTxt" aria-live="polite"></span>
+    <button id="capGo" class="pill" type="button" disabled>Mở chương</button>
+  </div>
+  <div class="marq" aria-hidden="true"><div class="mt" id="mt"></div></div>
+</main>
+
+<!-- C. NỘI DUNG CHƯƠNG -->
+<section id="panel" role="dialog" aria-modal="true" aria-label="Nội dung chủ đề" inert>
+  <div class="wipe" id="wipe"></div>
+  <div class="pbg" aria-hidden="true"><div class="film"></div><div class="dots"></div><div class="rg r1"></div><div class="rg r2"></div><i class="pl p1"></i><i class="pl p2"></i><i class="pl p3"></i></div>
+  <div class="pwrap">
+    <div class="slab2"><small>CHƯƠNG</small><b id="pNum">01</b><em>/ 09</em></div>
+    <button id="close" class="round pclose" type="button" aria-label="Đóng (Esc)"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="badge" id="pBadge" aria-hidden="true"></div>
+    <div class="pmain"><div class="ptxt"><h2 id="pTitle"></h2><div id="pBody"></div></div></div>
+    <nav class="vsel" id="vsel" aria-label="Chọn chương"></nav>
+    <div class="pbar">
+      <button id="back" class="pill rev" type="button">Về danh sách</button>
+      <div class="pn"><button id="prev" class="pill rev" type="button">Trước</button><button id="next" class="pill" type="button">Sau</button></div>
+    </div>
+  </div>
+</section>
+
+<div id="toast" class="toast" role="status"></div>
+<script src="js/content.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
